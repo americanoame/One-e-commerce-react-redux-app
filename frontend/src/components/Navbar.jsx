@@ -12,7 +12,7 @@ const AppNavbar = () => {
     <Navbar bg="warning" expand="lg">
       <Container>
         <Navbar.Brand href="/products" className="mr-auto" style={{ color: 'white' }}>
-          E-commerce
+          AvaloZe
         </Navbar.Brand>
 
         <Navbar.Toggle
