@@ -11,20 +11,21 @@ const AppNavbar = () => {
   return (
     <Navbar bg="warning" expand="lg">
       <Container>
-        <Navbar.Brand href="/products" className="mr-auto" style={{ color: 'white' }}>
+        <Navbar.Brand href="/products" className="mr-auto" 
+        style={{ color: 'white', fontSize: '23px', fontFamily: 'Times New Roman', fontWeight: 'bolder' }}>
           AvaloZe
         </Navbar.Brand>
 
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          onClick={toggleNav}
+          onClick={toggleNav} 
         >
           {isNavOpen ? 'X' : <div>&#9776;</div>}
         </Navbar.Toggle>
 
         <Navbar.Collapse id="basic-navbar-nav" className={`flex-column ${isNavOpen ? 'show' : ''}`}>
           <Nav className="ml-auto">
-            <Nav.Link href="/products">Products</Nav.Link>
+            <Nav.Link href="/products" style={{fontWeight: 'bolder'}}>Products</Nav.Link>
             <Nav.Link type="button" className="--btn" href="/log-in" style={{ color: 'white' }}>
               Log In
             </Nav.Link>
@@ -33,7 +34,7 @@ const AppNavbar = () => {
         </Navbar.Collapse>
 
         <Nav className="ml-auto">
-          <Nav.Link href="#cart" style={{ color: 'white', fontSize: '20px' }}>
+          <Nav.Link href="#cart" style={{ color: 'grey', fontSize: '20px' }}>
             🛒Cart
           </Nav.Link>
         </Nav>
