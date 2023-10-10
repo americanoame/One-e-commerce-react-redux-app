@@ -3,7 +3,7 @@ import { Form, Button, Container, Col } from 'react-bootstrap';
 export default function SignUp() {
   
     return (
-      <Container className="d-flex justify-content-center align-items-center">
+      <Container className="d-flex justify-content-center align-items-center mt-5">
         <div className="bg-white p-4">
         <h2 className="text-2xl text-center font-semibold mb-4 text-dark">Sign Up</h2>
   
