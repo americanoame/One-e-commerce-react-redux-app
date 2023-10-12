@@ -6,7 +6,7 @@ const AppNavbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary bg-white fixed-top">
       <div className="container">
         <Navbar.Brand href="/products" className="mr-auto" 
-          style={{ color: 'black', fontSize: '23px', fontFamily: 'Times New Roman', fontWeight: 'bolder' }}>
+          style={{ color: 'grey', fontSize: '23px', fontFamily: 'Times New Roman', fontWeight: 'bolder' }}>
           AVaLoZe
         </Navbar.Brand>
 
@@ -48,12 +48,12 @@ const AppNavbar = () => {
               </motion.li>
               <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
                 <a className="nav-link" href="log-in">
-                  Log in
+                  Log In
                 </a>
               </motion.li>
               <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
                 <a className="nav-link" href="sign-up">
-                  Sign up
+                  Sign Up
                 </a>
               </motion.li>
             </ul>
