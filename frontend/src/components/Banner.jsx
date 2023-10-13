@@ -5,8 +5,8 @@ const img9 = '/images/slider2.jpg';
 function Banner() {
   return (
     
-        <div className="">
-          <div className="container-xxl mb-2 banner-container mb-2 " style={{height: '30vh'}}>
+        <div className="mt-5">
+          <div className="container banner-container  " style={{height: '30vh'}}>
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">

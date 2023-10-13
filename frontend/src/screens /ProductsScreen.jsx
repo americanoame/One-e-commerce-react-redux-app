@@ -8,11 +8,11 @@ const ProductsScreen = () => {
       <div>
         <Banner />
       </div>
-      <div className="container mx-auto min-h-screen mt-5" style={{ position: 'relative' }}>
-        <Row className="justify-content-center">
+      <div className="container mx-auto min-h-screen" style={{ position: 'relative' }}>
+        <Row className="justify-content-center custom-row">
           {products.map((product) => (
             <Col key={product._id} xs={12} sm={6} md={4} lg={3}>
-              <Card className="custom-card mb-4 py-4" style={{ position: 'relative', zIndex: 1 }}>
+              <Card className="custom-card mb-4" style={{ position: 'relative', zIndex: 1 }}>
                 <Card.Img variant="top" src={product.image} style={{ height: '50%' }} />
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>

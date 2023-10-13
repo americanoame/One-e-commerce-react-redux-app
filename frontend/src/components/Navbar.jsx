@@ -57,9 +57,10 @@ const AppNavbar = () => {
                 </a>
               </motion.li>
             </ul>
-            <button href="#cart" className="btn btn-outline-warning" type="submit" style={{ color: 'grey', fontSize: '20px' }}>
+            <a href="/cart" className="btn btn-outline-warning" type="button" 
+              style={{ color: 'grey', fontSize: '20px' }}>
               🛒Cart
-            </button>
+            </a>
           </div>
         </div>
       </div>
