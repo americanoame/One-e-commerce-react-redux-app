@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 
 import { Form, Button, Container, Col } from 'react-bootstrap';
 
@@ -7,6 +8,7 @@ export default function SignUp() {
   const [error, setError] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -33,6 +35,7 @@ export default function SignUp() {
       // "If data.success is equal to false, then setError(true) 
       // is called. Otherwise, do nothing (null)."
 
+      navigate('/log-in');
     } catch (error) {
       setLoading(false);
       setError(true);
