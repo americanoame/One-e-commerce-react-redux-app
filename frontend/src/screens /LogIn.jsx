@@ -1,13 +1,42 @@
-
+import { useState } from 'react';
 import { Form, Button, Container, Col } from 'react-bootstrap';
+import {  useNavigate } from 'react-router-dom';
 
 export default function LogIn() {
+
+  const [formData, setFormData] = useState({});
+  
+  const navigate = useNavigate();
+  
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+  
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+     
+      navigate('/');
+    } catch (error) {
+      
+    
+  
   
     return (
       <Container className="d-flex justify-content-center align-items-center mt-5">
         <div className="bg-white p-4">
         <h2 className="text-2xl text-center font-semibold mb-4 text-dark">Log In</h2>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="email">
             <Col xs={2}>
               <Form.Label className="mt-2">Email</Form.Label>
@@ -18,7 +47,7 @@ export default function LogIn() {
                 name="email"
                 
                 className="w-full px-5 py-2 border rounded-lg"
-                
+                onChange={handleChange}
               />
             </Form.Group>
   
@@ -31,7 +60,7 @@ export default function LogIn() {
                 name="password"
                 
                 className="w-full px-5 py-2 border rounded-lg"
-               
+               onChange={handleChange}
               />
             </Form.Group>
   
@@ -51,7 +80,7 @@ export default function LogIn() {
     );
   }
 
-
+  }
 
 
 
