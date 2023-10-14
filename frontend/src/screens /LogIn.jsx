@@ -1,7 +1,7 @@
 
 import { Form, Button, Container, Col } from 'react-bootstrap';
 
-export default function SignUp() {
+export default function LogIn() {
   
     return (
       <Container className="d-flex justify-content-center align-items-center mt-5">

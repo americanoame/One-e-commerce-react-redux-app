@@ -25,7 +25,7 @@ const AppNavbar = () => {
           tabIndex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
-          style={{ height: '60vh', color: 'black' }}
+          style={{ height: '30vh', color: 'black' }}
         >
           <div className="offcanvas-header">
             <Navbar.Brand href="/products" className="me-5" 
@@ -57,7 +57,7 @@ const AppNavbar = () => {
                 </a>
               </motion.li>
             </ul>
-            <a href="/cart" className="btn btn-outline-warning" type="button" 
+            <a href="" className="btn btn-outline-warning" type="button" 
               style={{ color: 'grey', fontSize: '20px' }}>
               🛒Cart
             </a>

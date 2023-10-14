@@ -19,6 +19,10 @@
     padding: 2em;
   }
 
+  .carousel-item {
+    height: 200px;
+  }
+
   
   /* @media (max-width: 991px) {
     .custom-row {

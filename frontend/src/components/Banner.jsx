@@ -6,7 +6,7 @@ function Banner() {
   return (
     
         <div className="mt-5">
-          <div className="container banner-container  " style={{height: '30vh'}}>
+          <div className="container banner-container  " style={{height: '18vh'}}>
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
