@@ -5,7 +5,9 @@ import {  useNavigate } from 'react-router-dom';
 export default function LogIn() {
 
   const [formData, setFormData] = useState({});
-  
+  const [error, setError] = useState(false);
+
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   
   const handleChange = (e) => {
@@ -16,8 +18,9 @@ export default function LogIn() {
     e.preventDefault();
 
     try {
-  
-      const res = await fetch('/api/auth/login', {
+      setLoading(true);
+      setError(false);
+      const res = await fetch('/backend/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,12 +28,19 @@ export default function LogIn() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-     
-      navigate('/');
-    } catch (error) {
       
-    
-  
+      setLoading(false);
+      data.success === false ? setError(true) : null;
+       
+      // "If data.success is equal to false, then setError(true) 
+      // is called. Otherwise, do nothing (null)."
+
+      navigate('/products');
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
+  };
   
     return (
       <Container className="d-flex justify-content-center align-items-center mt-5">
@@ -64,8 +74,10 @@ export default function LogIn() {
               />
             </Form.Group>
   
-            <Button variant="primary" type="button"   className='w-100 --btn mt-3' 
-                href="/" style={{ color: 'gold', border: 'none' }}>Log In</Button>
+            <Button disabled={loading} variant="primary" type="submit"   className='w-100 --btn mt-3' 
+                 style={{ color: 'gold', border: 'none' }}>
+                 {loading ? 'Loading...' : 'Log In'}
+                 </Button>
           </Form>
   
           <p className="text-gray-600 text-sm mt-4">
@@ -74,13 +86,13 @@ export default function LogIn() {
               Sign Up instead
             </a>
           </p>
-          {/* <p className="text-red-700 mt-5">{error && 'Password does not match!'}</p> */}
+          <p className={`text-danger `}> {error && 'Something went wrong!'} </p>
         </div>
       </Container>
     );
   }
 
-  }
+  
 
 
 
