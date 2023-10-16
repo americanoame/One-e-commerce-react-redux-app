@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Form, Button, Container, Col } from 'react-bootstrap';
 import {  useNavigate } from 'react-router-dom';
+import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function LogIn() {
 
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(false);
+  const {loading, error} = useSelector((state) => state.user)
 
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -18,8 +20,7 @@ export default function LogIn() {
     e.preventDefault();
 
     try {
-      setLoading(true);
-      setError(false);
+      dispatch(signInStart());
       const res = await fetch('/backend/auth/login', {
         method: 'POST',
         headers: {
@@ -27,18 +28,18 @@ export default function LogIn() {
         },
         body: JSON.stringify(formData),
       });
-      const data = await res.json();
-      
-      setLoading(false);
-      data.success === false ? setError(true) : null;
+      const data = await res.json(); 
+      if (data.success === false) {
+        dispatch(signInFailure(data));
+        return;
+      }
        
       // "If data.success is equal to false, then setError(true) 
       // is called. Otherwise, do nothing (null)."
-
+      dispatch(signInSuccess(data));
       navigate('/products');
     } catch (error) {
-      setLoading(false);
-      setError(true);
+      dispatch(signInFailure(error));
     }
   };
   
@@ -86,7 +87,7 @@ export default function LogIn() {
               Sign Up instead
             </a>
           </p>
-          <p className={`text-danger `}> {error && 'Something went wrong!'} </p>
+          <p className={`text-danger `}> {error ? error.message || 'Something went wrong!' : ''} </p>
         </div>
       </Container>
     );
