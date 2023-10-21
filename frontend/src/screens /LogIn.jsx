@@ -46,7 +46,7 @@ export default function LogIn() {
     return (
       <Container className="d-flex justify-content-center align-items-center mt-5">
         <div className="bg-white p-4">
-        <h2 className="text-2xl text-center font-semibold mb-4 text-dark">Log In</h2>
+        <h2 className="text-2xl text-center font-semibold mb-4" style={{color: 'grey', fontWeight: '600'}}>Log In</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="email">
             <Col xs={2}>
@@ -76,15 +76,15 @@ export default function LogIn() {
             </Form.Group>
   
             <Button disabled={loading} variant="primary" type="submit"   className='w-100 --btn mt-3' 
-                 style={{ color: 'gold', border: 'none' }}>
+                 style={{ color: 'grey', border: 'none', textTransform: 'uppercase', fontWeight: 'bold' }}>
                  {loading ? 'Loading...' : 'Log In'}
                  </Button>
           </Form>
   
           <p className="text-gray-600 text-sm mt-4">
             Have no account?{' '}
-            <a href="/sign-up" className="text-green-500">
-              Sign Up instead
+            <a href="/sign-up" className="text-green-500" style={{color: 'green' }}>
+              Sign Up 
             </a>
           </p>
           <p className={`text-danger `}> {error ? error.message || 'Something went wrong!' : ''} </p>
