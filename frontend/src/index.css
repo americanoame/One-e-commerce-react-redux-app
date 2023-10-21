@@ -1,36 +1,136 @@
 .custom-card {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
-    background-color: rgba(255, 255, 255, 0.7); 
     border: none; 
     border-radius: 10px; 
+    margin-bottom: 90px;
+    margin-top: 20px;
+    padding: 15px;
   }
   
   .custom-card:hover {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
   }
 
-  .--btn {
-    background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
-    font-size: 22px;
-    
-  } 
-
-  .card {
-    padding: 2em;
-  }
-
   .carousel-item {
     height: 200px;
+    
   }
 
-  
-  /* @media (max-width: 991px) {
-    .custom-row {
-      height: 100vh;
+  img {
+    width: 80%;
+  }
+
+ .--btn {
+  background-image: linear-gradient(rgb(204, 175, 9), rgb(212, 190, 67));
+
+ }
+
+
+  .loadingProduct {
+    background-image: linear-gradient(to bottom, gold, gold);
     
+  }
+
+  .loadingProduct:hover {
+    background-color: darkgoldenrod;
+  }
+
+  .radius {
+    background: rgb(255, 238, 0);
+    border-radius: 200px;
+    padding: 100px;
+    margin-left: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+  }
+
+
+  
+  .slide-marketing {
+    /* background-image: linear-gradient(rgba(125, 125, 180, 0.8), rgba(99, 99, 148, 0.8)); */
+     
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
     }
   }
-   */
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .slide-animation {
+    animation: slide-in 1s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  
+
+  
+   
+
+  
+  
+  
   
   
   
