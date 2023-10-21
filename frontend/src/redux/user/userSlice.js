@@ -5,6 +5,7 @@ const initialState = {
     currentUser: null,
     loading: false,
     error: false,
+   
 };
 
 const userSlice = createSlice({
@@ -32,6 +33,15 @@ const userSlice = createSlice({
         state.loading = false;
         state.error = false;
     },
+
+
+
+    // setFilters: (state, action) => {
+    //     state.filters = [action.payload];
+    //   },
+
+
+
    },
 });
 
@@ -40,6 +50,7 @@ export const {
     signInSuccess, 
     signInFailure, 
     signOut,
+    setFilters,
 } = userSlice.actions;
 
 export default userSlice.reducer
