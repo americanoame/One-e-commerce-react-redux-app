@@ -5,6 +5,7 @@ import SignUp from './screens /SignUp';
 import Navbar from './components/Navbar';
 import Cart from './screens /Cart';
 import './App.css'
+import { NoMatch } from './components/NoMatch';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
           <Route path="/" element={<ProductsScreen />} />
           <Route path="/log-in" element={<LogIn />} />
           <Route path="/sign-up" element={<SignUp />} />  
-         <Route path="/cart" element={<Cart />} />  
+         <Route path="/cart" element={<Cart />} /> 
+         <Route path='*' element={<NoMatch />} /> 
         </Routes>
       
     </BrowserRouter>
