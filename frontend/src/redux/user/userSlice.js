@@ -14,7 +14,10 @@ const userSlice = createSlice({
    reducers: {
     signInStart: (state) => {
         state.loading = true;
+        state.isAuthenticated = true;
     },
+
+
     signInSuccess: (state, action) => {
         state.currentUser = action.payload;
         state.loading = false;
@@ -28,19 +31,12 @@ const userSlice = createSlice({
     },
 
 
-    signOut: (state) => {
+    logOut: (state) => {
+        state.isAuthenticated = false;
         state.currentUser = null;
         state.loading = false;
         state.error = false;
     },
-
-
-
-    // setFilters: (state, action) => {
-    //     state.filters = [action.payload];
-    //   },
-
-
 
    },
 });
