@@ -1,7 +1,24 @@
 import { Navbar } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { signOut } from '../redux/cart/cartSlice';
 
 const AppNavbar = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+  // const isAuthenticated = /* Add your authentication logic here */ false; // Set to true when user is authenticated
+
+  const dispatch = useDispatch();
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/backend/auth/sign-out');
+      dispatch(signOut());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary bg-white fixed-top">
       <div className="container-xxl">
@@ -26,22 +43,36 @@ const AppNavbar = () => {
                   Products
                 </a>
               </motion.li>
-              <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
-                <a className="nav-link" href="log-in">
-                  Log In
-                </a>
-              </motion.li>
-              <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
-                <a className="nav-link" href="sign-up">
-                  Sign Up
-                </a>
-              </motion.li>
+              {/* {isAuthenticated ? ( // Only show "Log In" and "Sign Up" if not authenticated
+                <> */}
+                  <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
+                    <a className="nav-link" href="log-in">
+                      Log In
+                    </a>
+                  </motion.li>
+                  <motion.li className="nav-item" whileHover={{ scale: 1.1 }}>
+                    <a className="nav-link" href="sign-up">
+                      Sign Up
+                    </a>
+                  </motion.li>
+                {/* </>
+              ) : null} */}
             </ul>
-            <button className="btn btn-white shadow-sm rounded-pill " 
-            style={{ fontSize: '12px', backgroundColor: 'gold', 
-            color: 'grey', border: 'none', marginRight: '40px'}}>
-              🛒 Cart
-            </button>
+            <Link to='/cart'>
+              <button
+                type="submit"
+                className="btn  shadow-sm rounded-pill log-out"
+                
+              >
+                <span className="red-dot">{cartItems?.reduce((acc, {quantity}) => acc + quantity, 0) || 0}</span> 🛒 Cart
+              </button>
+
+              
+            </Link>
+
+            <button className='btn'  onClick={handleLogout}>
+                Log Out
+              </button>
           </div>
         </div>
       </div>
