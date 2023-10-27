@@ -4,6 +4,7 @@ import LogIn from './screens /LogIn';
 import SignUp from './screens /SignUp';
 import Navbar from './components/Navbar';
 import Cart from './screens /Cart';
+// import Footer from './components/Footer'
 import './App.css'
 import { NoMatch } from './components/NoMatch';
 
@@ -19,7 +20,7 @@ function App() {
          <Route path="/cart" element={<Cart />} /> 
          <Route path='*' element={<NoMatch />} /> 
         </Routes>
-      
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
