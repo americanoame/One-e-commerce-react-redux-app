@@ -1,14 +1,34 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Banner from '../components/Banner';
 import { products } from '../products';
 import SpinnerBox from '../components/SpinnerBox';
 
+
+// build add to cart
+import  {addItem}  from '../redux/cart/cartSlice';
+
+
 const img10 = '/images/s4watch.jpg';
 
 const ProductsScreen = () => {
+
+// build add to cart
+
+const dispatch = useDispatch();
+
+
+
+const handleAddItem = (product) => {
+  
+  dispatch(addItem({ id: product._id }));
+  
+};
+
+
+
   // useState(products) which means you're using product data
   // from the products variable. there was no need to fetch the data in the useEffect
-
   const [items] = useState(products);
   const [visible, setVisible] = useState(8);
   const [isLoading, setIsLoading] = useState(true);
@@ -73,9 +93,11 @@ const ProductsScreen = () => {
                     </div>
 
                     <div className="cart-btn" style={{ display: 'flex', justifyContent: 'center' }}>
-                      <button className="btn btn-white shadow-sm rounded-pill" style={{ fontSize: '12px', backgroundColor: 'gold', color: 'grey', border: 'none' }}>
+                      <button 
+                        onClick={() => handleAddItem(product)} className="btn btn-white shadow-sm rounded-pill" style={{ fontSize: '12px', backgroundColor: 'gold', color: 'grey', border: 'none' }}>
                         🛒 Add to Cart
                       </button>
+                      
                       <button className="btn btn-white shadow-sm rounded-pill" style={{ fontSize: '10px', marginLeft: '10px', backgroundColor: 'lightGrey', color: 'white', border: 'none' }}>
                         Product Details
                       </button>
