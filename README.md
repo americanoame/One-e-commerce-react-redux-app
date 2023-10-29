@@ -23,6 +23,6 @@
 **Progress:**
 Version 1 completed 35%
 <br/>
-![](src/assets/progressbar.png)
+![progressbar](https://github.com/americanoame/One-e-commerce-react-redux-app/assets/77306236/5fa5835f-e554-4774-91db-707925f8fce4)
 
 
