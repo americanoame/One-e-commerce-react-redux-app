@@ -23,7 +23,6 @@
 **Progress:**
 Version 1 completed 35%
 <br/>
-![](public/images/progressbar.png)
-
+![](src/assets/progressbar.png)
 
 
