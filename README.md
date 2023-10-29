@@ -31,7 +31,7 @@ Version 1 completed 50%
 Product Page:
 
 ![Screenshot 2023-10-29 at 1 39 01 PM](https://github.com/americanoame/One-e-commerce-react-redux-app/assets/77306236/48ff1bc2-c03a-47ca-b614-a63686e10959)
-![Screenshot 2023-10-29 at 1 40 20 PM](https://github.com/americanoame/One-e-commerce-react-redux-app/assets/77306236/4963029c-114e-4d80-84c3-2f8e18a7fcc1)
+![Screenshot 2023-10-29 at 6 26 39 PM](https://github.com/americanoame/One-e-commerce-react-redux-app/assets/77306236/fbee2a84-1d0a-4fa2-8377-6d3298776e87)
 
 
 ## Getting Started
@@ -42,8 +42,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 The following software is required to be installed on your system:
 
-* Node 8.x
-* Npm 3.x
+* Node v16.19.0
+* Npm 
 
 Type the following commands in the terminal to verify your node and npm versions
 
